@@ -1,0 +1,20 @@
+
+<div class="modalback" id="signup_modal_back" style="display: none;">
+
+    <div class="modalfront" id=signup_modal_front>
+
+        <div class="closeicon" onclick="toggle_visibility('signup_modal_back')"></div>
+        <h3>regisztráció</h3>
+        <form action="/register" method="post">
+            <label for="username">felhasználónév</label><br>
+            <input type=text id="username" name="username"><br><br>
+            <label for="password">jelszó</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="password2">jelszó még egyszer</label><br>
+            <input type="password" id="password2" name="password2"><br><br>
+            <input type="submit" value="regisztráció">
+        </form>
+
+    </div>
+
+</div>

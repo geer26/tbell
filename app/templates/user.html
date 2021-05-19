@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="geer26">
+
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>TabataBell!</title>
+        {% endif %}
+
+        <!--
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        -->
+
+        <link href="/static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/base.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/modals.css" type="text/css" rel="stylesheet">
+
+        <script src="/static/js/query-3.5.1.min.js"></script>
+        <script src="/static/js/sortable.min.js"></script>
+        <script src="/static/js/base.js" defer></script>
+
+    </head>
+
+    <body>
+
+    <div>USER PAGE!</div>
+
+    <button class="btn btn-primary btn-sm" onclick="location.href='/logout'">KILÉPÉS</button>
+
+    <button class="btn btn-primary btn-sm" onclick="fetch_hello()">FETCH HELLO</button>
+
+    </body>
+
+    <script>
+        function fetch_hello(){
+            fetch('/api')
+            .then(response => response.json())
+            .then(data => {
+                                console.log(data);
+                           });
+        }
+    </script>
+
+</html>

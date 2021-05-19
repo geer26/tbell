@@ -1,0 +1,94 @@
+
+@font-face {
+	font-family: Roboto;
+	src: url('/static/fonts/Roboto-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+
+body{
+    background-color: #403c31;
+    font-family: Roboto;
+	color: #d9d5b2;
+
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	background-image: url('/static/img/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	overflow: hide;
+
+    /* NOSELECT! */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+
+.logo{
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    display: inline-block;
+    background-image: url('/static/img/icons/logo_medium.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 10%;
+	float: left;
+}
+
+
+.headerbutton{
+    margin: 10px;
+    float: right;
+}
+
+
+.buttons{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  gap: 0px 0px;
+  grid-template-areas:
+    'header'
+    'content';
+}
+
+
+.header{
+    grid-area: 'header';
+    position: relative;
+    padding: 10px;
+    display: flex;
+    background-color: rgba(77, 77, 51, 0.7);
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.75);
+}
+
+.content{
+    grid-area: 'content';
+    position: relative;
+    display: inline-block;
+    overflow: auto;
+    border: 2px solid yellow;
+    height: 100%;
+}
