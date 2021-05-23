@@ -48,6 +48,8 @@
   top: 5vh;
   left: 5vw;
   padding-bottom: 2vh;
+
+  border: 1px solid red;
 }
 
 .hamburger-icon span {
@@ -179,10 +181,10 @@ display: block;
 input.hamburger-checkbox {
   position: absolute;
   z-index: 3;
-  top: 5vh;
-  left: 5vw;
+  top: 1vh;
+  left: 1vw;
   width: 10vw;
   opacity: 0;
   height: 6vh;
-}
+  border: 1px solid red;
 }

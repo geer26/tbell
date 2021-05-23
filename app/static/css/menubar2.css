@@ -1,0 +1,84 @@
+.logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    align-items: stretch;
+    display: inline-block;
+    background-image: url('/static/img/icons/logo_medium.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 4vw;
+    height: 4vw;
+	border: 1px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
+
+.headerbutton{
+    display: block;
+    margin: 10px;
+    margin-left: 30px;
+    /*float: right;*/
+
+    border-radius: 6vh;
+
+    background-color: rgb(0, 174, 255);
+    color: rgb(252, 252, 235);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.5), -2px -2px 6px 0px rgba(255,255,255,0.5);
+    transition: 0.7s ease-in-out;
+}
+
+
+.headerbutton:hover{
+    box-shadow: inset 3px 3px 4px 0px rgba(0,0,0,0.5), inset -3px -3px 4px 0px rgba(255,255,255,0.5);
+}
+
+
+.headerbutton:activate{
+    background-color: rgba(140, 186, 45, 0.5);
+}
+
+
+/*---FLOATING MENU---*/
+
+
+.menuholder{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+}
+
+
+.floatmenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 80vh;
+    background-color: #25263d;
+    border-radius: 0 20px 20px 0;
+    -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+    transition: 0.7s ease-in-out;
+    transform: none;
+}
+
+
+.menu_elements{
+    position: absolute;
+    top: 15vh;
+    left: 10px;
+}

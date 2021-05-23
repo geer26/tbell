@@ -1,0 +1,20 @@
+<link href="/static/css/menubar2.css" type="text/css" rel="stylesheet">
+
+<link href="/static/css/modals.css" type="text/css" rel="stylesheet">
+
+{%include '/res/loginmodal.html'%}
+{%include '/res/signupmodal.html'%}
+
+<div class="menuholder">
+
+  <div class="logo" style="z-index:8889;"></div>
+
+  <div class="floatmenu">
+    <div class="menu_elements">
+      <button onclick="fetch_hello()" class="headerbutton">FETCH HELLO</button>
+      <button onclick="toggle_visibility('signup_modal_back')" class="headerbutton">regisztráció</button>
+      <button onclick="toggle_visibility('login_modal_back')" class="headerbutton">belépés</button>
+    </div>
+  </div>
+
+</div>
