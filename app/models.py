@@ -17,13 +17,14 @@ def load_user(id):
 USERS
 -------------------------------
  - id (int, u)
- - username (str/16/, u)
+ - username (str/32/, u)
  - password_hash (str/128/)
  - salt (str/128/)
  - APIkey (str/64/)
  - created (date)
  - last_modified (date)
  - is_superuser (bool)
+ - exercises 
 ===============================
 '''
 
@@ -36,6 +37,8 @@ class User(UserMixin, db.Model):
     created = db.Column(db.Date(), default=datetime.now())
     last_modified = db.Column(db.Date(), default=datetime.now())
     is_superuser = db.Column(db.Boolean, default=False)
+
+    exercises = db.relationship('Exercise', backref='user', lazy='dynamic')
 
     def __repr__(self):
         return f'<Username: {self.username}>'
@@ -57,3 +60,26 @@ class User(UserMixin, db.Model):
 
     def setkey(self, key):
         self.APIkey = key
+
+
+
+'''
+===============================
+EXERCISES
+-------------------------------
+ - id (int, u)
+ - name (str/32/)
+ - description (str/128/, def=NO DESCRIPTION)
+ - link (str/128/, def=NO VIDEO LINK)
+ - user_id (FK -> User.id)
+===============================
+'''
+class Exercise(db.Model):
+    id = db.Column(db.Integer, index=True, primary_key=True)
+    name = db.Column(db.String(32), index=True)
+    description = db.Column(db.String(128), default='Nincs leírás...')
+    link = db.Column(db.String(128), default='Nics videó csatolva...')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __repr__(self):
+        return f'<Exercise name: {self.name} , ID: {self.id}>'
