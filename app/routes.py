@@ -11,7 +11,7 @@ from app.workers import genarate_APIkey, hassu, get_all_users, get_admin_data, g
 def index():
 
     if current_user.is_authenticated and current_user.is_superuser:
-        resp = make_response(render_template('auth.html', users=get_all_users(), data=get_admin_data(), admins=get_admins() ))
+        resp = make_response(render_template('auth2.html', users=get_all_users(), data=get_admin_data(), admins=get_admins() ))
         resp.set_cookie('APIKEY', current_user.APIkey)
         return resp
 
