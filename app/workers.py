@@ -34,6 +34,80 @@ def get_all_users():
     return User.query.all()
 
 
+def get_user_data(id):
+    '''
+        {
+            id: id,
+            username: username,
+            apikey: APIkey,
+            created: created,
+            last_modified: last_ modified,
+            exercises: [
+                {
+                    id: id,
+                    name: name,
+                    description: description;
+                    link: link
+                }
+            ],
+            competitors: [
+                {
+                    id: id,
+                    name: name,
+                    description: description,
+                    weight: weight
+                }
+            ]
+        }
+
+    :param id: the id of the user
+    :return: the JSON above
+    '''
+
+    #init dict
+    u = {}
+    es = []
+    cs = []
+
+    #select user record by param
+    user = User.query.filter_by(id=id).first()
+
+    #append user data
+    u['id'] = user.id
+    u['username'] = user.username
+    u['apikey'] = user.APIkey
+    u['created'] = user.created
+    u['last_modified'] = user.last_modified
+
+    #iter over the exercises and append k-v pairs
+    for exercise in Exercise.query.filter_by(user_id=user.id):
+        e = {}
+        e['id'] = exercise.id
+        e['name'] = exercise.name
+        e['description'] = exercise.description
+        e['link'] = exercise.link
+        es.append(e)
+
+    #add all exercises of current user to dict
+    u['exercises'] = es
+
+    # iter over the competitors and append k-v pairs
+    for competitor in Competitor.query.filter_by(user_id=user.id):
+        c = {}
+        c['id'] = competitor.id
+        c['name'] = competitor.name
+        c['description'] = competitor.description
+        c['weight'] = competitor.weight
+        cs.append(c)
+
+    # add all competitors of current user to dict
+    u['competitors'] = cs
+    print(u)
+    return u
+
+
+
+
 def get_admin_data():
     '''
     [
@@ -62,7 +136,7 @@ def get_admin_data():
             ]
         }
     ]
-    :return:
+    :return: the JSON above
     '''
 
     data = []
