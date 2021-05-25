@@ -2,7 +2,7 @@ from flask import render_template, jsonify, request, make_response, redirect
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db, socket, valid_apikeys #limiter
 from app.models import User
-from app.workers import genarate_APIkey, hassu, get_all_users
+from app.workers import genarate_APIkey, hassu, get_all_users, get_admin_data, get_admins
 
 
 @app.route('/')
@@ -11,7 +11,7 @@ from app.workers import genarate_APIkey, hassu, get_all_users
 def index():
 
     if current_user.is_authenticated and current_user.is_superuser:
-        resp = make_response(render_template('auth.html', users=get_all_users()))
+        resp = make_response(render_template('auth.html', users=get_all_users(), data=get_admin_data(), admins=get_admins() ))
         resp.set_cookie('APIKEY', current_user.APIkey)
         return resp
     if current_user.is_authenticated and not current_user.is_superuser:

@@ -1,6 +1,8 @@
 import json
 
 #from app import db, login, fernet, logger
+from sqlalchemy.orm import backref
+
 from app import db, login
 import bcrypt
 from datetime import datetime
@@ -38,7 +40,8 @@ class User(UserMixin, db.Model):
     last_modified = db.Column(db.Date(), default=datetime.now())
     is_superuser = db.Column(db.Boolean, default=False)
 
-    exercises = db.relationship('Exercise', backref='user', lazy='dynamic')
+    exercises = db.relationship('Exercise', backref = backref('user', passive_deletes=True), lazy = 'dynamic')
+    competitors = db.relationship('Competitor', backref = backref('user', passive_deletes=True), lazy = 'dynamic')
 
     def __repr__(self):
         return f'<Username: {self.username}>'
@@ -78,8 +81,27 @@ class Exercise(db.Model):
     id = db.Column(db.Integer, index=True, primary_key=True)
     name = db.Column(db.String(32), index=True)
     description = db.Column(db.String(128), default='Nincs leírás...')
-    link = db.Column(db.String(128), default='Nics videó csatolva...')
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    link = db.Column(db.String(128), default='Nincs videó csatolva...')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'))
 
     def __repr__(self):
         return f'<Exercise name: {self.name} , ID: {self.id}>'
+
+'''
+COMPETITORS
+-------------------------------
+ - id (int, u)
+ - name (str/32/)
+ - description (str/128/, def=NO DESCRIPTION)
+ - weight (int, def=16)
+===============================
+'''
+class Competitor(db.Model):
+    id = db.Column(db.Integer, index=True, primary_key=True)
+    name = db.Column(db.String(32), index=True)
+    description = db.Column(db.String(128), default='Nincs leírás...')
+    weight = db.Column(db.Integer, default=16)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'))
+
+    def __repr__(self):
+        return f'<Competitor name: {self.name} , ID: {self.id}>'
