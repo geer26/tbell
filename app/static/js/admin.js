@@ -1,20 +1,17 @@
-console.log("Hello World!");
 
 socket = io();
 
+switch_pane('users', $('#users_icon'));
 
-switch_pane('users');
 
+function switch_pane(pane, e=null){
 
-function switch_pane(pane){
+    $("div.pane").hide();
 
-    $(".pane").each(function(item) {
-        $(item).hide();
-        console.log(item);
-    });
+    $("i.fas").removeClass('menuicon-active-pane');
 
-    $('#'+pane).show();
-
-    console.log('#'+pane);
+    if (e){
+        console.log("HELLO!");
+    }
 
 }
