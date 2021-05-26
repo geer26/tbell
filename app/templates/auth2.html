@@ -13,8 +13,9 @@
 
         <!--
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
 
         <!--
         <link href="/static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -27,6 +28,7 @@
         <script src="/static/js/sortable.min.js"></script>
         <script src="/static/js/socket.io.js"></script>
         <script src="/static/js/admin.js"></script>
+
         <!--
         <script src="/static/js/base.js"></script>
         -->
@@ -38,15 +40,32 @@
     <div class="grid-container">
 
         <div class="headermenu">
+
             <div class="logo" style="z-index:8889;"></div>
-            <button onclick="location.href='/logout'" class="headerbutton menubutton-blue">KILÉPÉS</button>
+
+            <ul class="menulist">
+
+                <li>
+                    <i class="fas fa-user-friends menuicon"></i>
+                </li>
+
+                <li>
+                    <i class="fas fa-at menuicon"></i>
+                </li>
+
+                <li>
+                    <i class="fas fa-sign-out-alt menuicon" onclick="location.href='/logout'"></i>
+                </li>
+
+            </ul>
+
         </div>
 
         <div class="content">
-            CONTENT HERE<br>
-            {% for u in users %}
-                {{u.username}} -> {{u.is_superuser}}<br>
-            {% endfor %}
+
+            {% include '/adminres/user_pane.html' %}
+            {% include '/adminres/admin_pane.html' %}
+
         </div>
 
     </div>
