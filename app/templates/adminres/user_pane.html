@@ -1,4 +1,36 @@
 <div id="users" class="pane">
-  hello world!
-  THIS IS USERS PANEL!
+
+  <p>FELHASZNÁLÓK</p>
+
+  {% for user in data %}
+    <div class="collapsible">
+      <span>
+        <p style="display: inline; align-self: center;">{{ user['username'] }}</p>
+        <i class="fas fa-trash-alt" style="align-self: center;"></i>
+        <i class="fas fa-trash-alt" style="align-self: center;"></i>
+      </span>
+    </div>
+
+    <div class="coll-content">
+
+      {% if not user['exercises']%}
+        NO EXERCISES
+      {% else %}
+        {% for exercise in user['exercises'] %}
+          {{exercise['name']}}
+        {% endfor %}
+      {% endif %}
+      <br>
+      {% if not user['competitors'] %}
+        NO COMPETITORS
+      {% else %}
+        {% for competitor in user['competitors'] %}
+          {{competitor['name']}}
+        {% endfor %}
+      {% endif %}
+
+    </div><br>
+  {% endfor %}
+
+
 </div>

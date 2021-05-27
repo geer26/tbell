@@ -185,3 +185,34 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 0 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.coll-content {
+  padding: 0 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

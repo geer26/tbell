@@ -102,10 +102,7 @@ def get_user_data(id):
 
     # add all competitors of current user to dict
     u['competitors'] = cs
-    print(u)
     return u
-
-
 
 
 def get_admin_data():
