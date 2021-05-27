@@ -190,3 +190,13 @@ def get_admins():
         admins.append(user)
 
     return admins
+
+
+def del_user_by_id(id):
+
+    user = User.query.get(int(id))
+    if not user:
+        return 0
+    db.session.delete(user)
+    db.session.commit()
+    return 1

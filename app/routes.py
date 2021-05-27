@@ -2,7 +2,7 @@ from flask import render_template, jsonify, request, make_response, redirect
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db, socket, valid_apikeys #limiter
 from app.models import User
-from app.workers import genarate_APIkey, hassu, get_all_users, get_admin_data, get_admins, get_user_data
+from app.workers import genarate_APIkey, hassu, get_all_users, get_admin_data, get_admins, get_user_data, del_user_by_id
 
 
 @app.route('/')
@@ -118,5 +118,11 @@ def new_admin_message(data):
     sid = request.sid
 
     # delete user with ID
-    if data['event'] == 2201:
+    if data['event'] == 1501:
+        message = {}
+        message['event'] = 1502
+        message['status'] = del_user_by_id(data['id'])
+        if message['status'] == 1:
+            message['content'] = render_template('adminres/user_pane.html', data = get_admin_data())
+        socket.emit('admin', message, room=sid)
         return True
