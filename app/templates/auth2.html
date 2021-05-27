@@ -43,6 +43,10 @@
                 </li>
 
                 <li>
+                    <i class="fas fa-chart-line menuicon" id="statistics_icon" onclick="switch_pane('statistics')"></i>
+                </li>
+
+                <li>
                     <i class="fas fa-sign-out-alt menuicon" onclick="location.href='/logout'"></i>
                 </li>
 
@@ -54,6 +58,7 @@
 
             {% include '/adminres/user_pane.html' %}
             {% include '/adminres/admin_pane.html' %}
+            {% include '/adminres/statistics_pane.html' %}
 
         </div>
 
