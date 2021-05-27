@@ -5,7 +5,7 @@
   {% for user in data %}
     <div class="collapsible">
       <span>
-        <p style="display: inline; align-self: center;">{{ user['username'] }}</p>
+        <p style="display: inline; align-self: center;">{{ user['username'] }} : {{user['apikey']}}</p>
         <i class="fas fa-trash-alt" style="align-self: center; color: #eb7c5e;" onclick="deluser({{user.id}})"></i>
       </span>
     </div>
