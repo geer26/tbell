@@ -20,7 +20,7 @@
         <script src="/static/js/query-3.5.1.min.js"></script>
         <script src="/static/js/sortable.min.js"></script>
         <script src="/static/js/socket.io.js"></script>
-        <script src="/static/js/admin.js"></script>
+        <script src="/static/js/admin.js" defer></script>
 
     </head>
 
@@ -35,11 +35,11 @@
             <ul class="menulist">
 
                 <li>
-                    <i class="fas fa-user-friends menuicon" id="users_icon"></i>
+                    <i class="fas fa-user-friends menuicon" id="users_icon" onclick="switch_pane('users')"></i>
                 </li>
 
                 <li>
-                    <i class="fas fa-at menuicon" id="admins_icon"></i>
+                    <i class="fas fa-at menuicon" id="admins_icon" onclick="switch_pane('users')"></i>
                 </li>
 
                 <li>

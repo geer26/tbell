@@ -1,17 +1,17 @@
 
 socket = io();
 
-switch_pane('users', $('#users_icon'));
+switch_pane('users');
 
 
-function switch_pane(pane, e=null){
+function switch_pane(pane){
 
     $("div.pane").hide();
 
     $("i.fas").removeClass('menuicon-active-pane');
 
-    if (e){
-        console.log("HELLO!");
-    }
+    console.log(pane);
+    $('#'+pane).show();
+    $('#'+pane+'_icon').addClass('menuicon-active-pane');
 
 }
