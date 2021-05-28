@@ -2,9 +2,9 @@
     position: absolute:
     top: 50%;
     left: 50%;
-    display: flex;
-    width: 50vw;
-    height: 50vw;
+    display: inline-block;
+    width: 100px
+    height: 100px;
     border: 1px solid red;
-
+    z-index: 9999;
 }
