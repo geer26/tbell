@@ -1,0 +1,10 @@
+.preloader{
+    position: absolute:
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 50vw;
+    height: 50vw;
+    border: 1px solid red;
+
+}
