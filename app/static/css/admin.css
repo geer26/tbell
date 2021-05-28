@@ -221,6 +221,7 @@
 .coll-icon-holder{
     position: relative;
     align-self: center;
+    display: inline;
     border: 1px solid red;
 }
 
