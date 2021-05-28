@@ -5,12 +5,20 @@
   {% for user in data %}
     <div class="collapsible">
       <span>
-        <p style="display: inline; align-self: center;">{{ user['username'] }} : {{user['apikey']}}</p>
-        <i class="fas fa-trash-alt" style="align-self: center; color: #eb7c5e;" onclick="deluser({{user.id}})"></i>
+
+        <p style="display: inline; align-self: center;">{{ user['username'] }}</p>
+
+        <span class="coll-icon-holder">
+          <i class="fas fa-trash-alt coll-icon" onclick="deluser({{user.id}})"></i>
+        </span>
+
       </span>
     </div>
 
     <div class="coll-content">
+
+      <p> User id : {{user['id']}}</p>
+      <p> User API key : {{user['apikey']}}</p>
 
       {% if not user['exercises']%}
         NO EXERCISES

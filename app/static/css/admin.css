@@ -216,3 +216,23 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+
+.coll-icon-holder{
+    position: relative;
+    align-self: center;
+    border: 1px solid red;
+}
+
+
+.coll-icon{
+    display: absolute;
+    top: 0;
+    left: 0;
+    color: #eb7c5e;
+}
+
+
+.coll-icon:hover{
+    font-size: 110%;
+}
