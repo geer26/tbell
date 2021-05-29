@@ -30,7 +30,7 @@
     border-radius: 80% 0 0 0;
     animation-name: upper-left-anim;
     animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
@@ -44,7 +44,7 @@
     border-radius: 0 80% 0 0;
     animation-name: upper-right-anim;
     animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
@@ -58,7 +58,7 @@
     border-radius: 0 0 80% 0;
     animation-name: lower-right-anim;
     animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
@@ -72,7 +72,7 @@
     border-radius: 0 0 0 80%;
     animation-name: lower-left-anim;
     animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
@@ -95,13 +95,13 @@
   0%   {background-color: rgba(255, 153, 85, 0);}
   25%  {background-color: rgba(255, 153, 85, 0);}
   50%  {background-color: rgba(255, 153, 85, 0);}
-  75%   {background-color: #ff9955;}
-  100% {background-color: rgba(255, 153, 85, 0);}
+  75%  {background-color: rgba(255, 153, 85, 0);}
+  100% {background-color: #ff9955;}
 }
 
 @keyframes upper-right-anim {
   0%   {background-color: #a7bf87;}
-  25%  {background-color: rgba(167, 191, 135, 0);}
+  25%  {background-color: #a7bf87;}
   50%  {background-color: rgba(67, 191, 135, 0);}
   75%   {background-color: rgba(67, 191, 135, 0);}
   100% {background-color: rgba(67, 191, 135, 0)}
@@ -109,17 +109,17 @@
 
 @keyframes lower-right-anim {
   0%   {background-color: rgba(166, 192, 218, 0);}
-  25%  {background-color: #a6c0da;}
-  50%  {background-color: rgba(166, 192, 218, 0);}
-  75%   {background-color: rgba(166, 192, 218, 0);}
+  25%  {background-color: rgba(166, 192, 218, 0);}
+  50%  {background-color: #a6c0da;}
+  75%  {background-color: rgba(166, 192, 218, 0);}
   100% {background-color: rgba(166, 192, 218, 0);}
 }
 
 @keyframes lower-left-anim {
   0%   {background-color: rgba(214, 142, 164, 0);}
   25%  {background-color: rgba(214, 142, 164, 0);}
-  50%  {background-color: #d68ea4;}
-  75%   {{background-color: rgba(214, 142, 164, 0);}}
+  50%  {background-color: rgba(214, 142, 164, 0);}
+  75%  {background-color: #d68ea4;}
   100% {background-color: rgba(214, 142, 164, 0);}
 }
 
