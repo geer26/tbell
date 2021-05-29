@@ -3,7 +3,7 @@
   <p>FELHASZNÁLÓK</p>
 
   {% for user in data %}
-    <div class="collapsible">
+    <span class="collapsible">
       <span>
 
         <p style="display: inline; align-self: center;">{{ user['username'] }}</p>
@@ -12,12 +12,12 @@
           <i class="fas fa-trash-alt coll-icon" onclick="deluser({{user.id}})"></i>
         </span>
 
-        <span class="coll-icon-holder" style="float: right;">
+        <span class="coll-icon-holder">
           <i class="fas fa-plus coll-icon"></i>
         </span>
 
       </span>
-    </div>
+    </span>
 
     <div class="coll-content">
 
