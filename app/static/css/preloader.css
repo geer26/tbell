@@ -1,9 +1,22 @@
-.preloader{
+.preloader-back{
     position: absolute;
-    top: 50vh;
-    left: 50vw;
-    width: 50px;
-    height: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    backdrop-filter: blur(5px) grayscale(0.5);
+}
+
+.preloader{
+    position: relative;
+    /*top: 50vh;
+    left: 50vw;*/
+    align-self: center;
+    width: 10vw;
+    height: 10vw;
     z-index: 9999;
 }
 
@@ -82,8 +95,8 @@
   0%   {background-color: rgba(255, 153, 85, 0);}
   25%  {background-color: rgba(255, 153, 85, 0);}
   50%  {background-color: rgba(255, 153, 85, 0);}
-  75%   {background-color: rgba(255, 153, 85, 0);}
-  100% {background-color: #ff9955;}
+  75%   {background-color: #ff9955;}
+  100% {background-color: rgba(255, 153, 85, 0);}
 }
 
 @keyframes upper-right-anim {
