@@ -25,7 +25,7 @@ function switch_pane(pane){
 
 
 function deluser(id){
-    console.log(id);
+    preload_start();
     let message = {event: 1501, id: id};
     send_message(message);
 }
@@ -57,6 +57,7 @@ socket.on('admin', function(data){
 
         //accept deluser status
         case 1502:{
+            preload_end();
             if (data['status'] != 1){
                 console.log('ERROR MESSAGE');
                 //DROP ERROR MESSAGE!
