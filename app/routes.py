@@ -120,7 +120,7 @@ def new_admin_message(data):
     # delete user with ID
     if data['event'] == 1501:
         message = {}
-        message['event'] = 1502
+        message['event'] = 4502
         message['status'] = del_user_by_id(data['id'])
         if message['status'] == 1:
             message['content'] = render_template('adminres/user_pane.html', data = get_admin_data())

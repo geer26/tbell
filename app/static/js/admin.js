@@ -50,13 +50,28 @@ function refresh(){
 }
 
 
+function copy_apikey(){
+    /* Get the text field */
+    var copyText = document.getElementById("apikey").innerHTML;
+    console.log(copyText);
+
+    //TODO: finish
+    //Select the inner html (APIkey)!
+    //copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+    return;
+}
+
+
 //Websockets admin event dispatcher
 socket.on('admin', function(data){
 
     switch (data['event']){
 
         //accept deluser status
-        case 1502:{
+        case 4502:{
             preload_end();
             if (data['status'] != 1){
                 console.log('ERROR MESSAGE');

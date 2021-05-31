@@ -186,6 +186,7 @@
   background-color: #555;
 }
 
+
 .coll-content {
   padding: 0 18px;
   padding-top: 15px;
@@ -220,4 +221,16 @@
 .coll-icon:hover{
     font-size: 150%;
     top: -12.5%;
+}
+
+
+.copyicon{
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+
+.copyicon:hover{
+    font-size: 110%;
+    color: grey;
 }

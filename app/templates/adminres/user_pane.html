@@ -22,7 +22,9 @@
     <div class="coll-content">
 
       <p> User id : {{user['id']}}</p>
-      <p> User API key : {{user['apikey']}}</p>
+      <p> User API key : <a id="apikey">{{user['apikey']}}</a>
+          <i class="fas fa-copy copyicon" onclick="copy_apikey()"></i>
+      </p>
 
       {% if not user['exercises']%}
         NO EXERCISES
