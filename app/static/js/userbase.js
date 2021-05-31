@@ -1,3 +1,5 @@
+preload_end();
+
 
 function fetch_hello(){
     fetch('/api')

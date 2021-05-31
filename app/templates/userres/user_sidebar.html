@@ -1,9 +1,34 @@
 <div class="user-sidebar">
 
-  <h2>MENUPANEL</h2>
+  <div class="logo"></div>
 
-  <button class="btn btn-primary btn-sm" onclick="location.href='/logout'">KILÉPÉS</button><br>
+  <h1>MAIN MENU</h1>
 
-  <button class="btn btn-primary btn-sm" onclick="fetch_hello()">FETCH HELLO</button>
+  <ul class="menulist">
+
+    <li>
+      <p>BEÁLLÍTÁSOK</p>
+    </li>
+    <li>
+      <p>GYAKORLATOK</p>
+    </li>
+    <li>
+      <p>SOROZATOK</p>
+    </li>
+    <li>
+      <p>VERSENYZŐK</p>
+    </li>
+    <li>
+      <p>VERSENYEK</p>
+    </li>
+    <li onclick="location.href='/logout'">
+      <p>KILÉPÉS</p>
+    </li>
+
+    <li onclick="fetch_hello()">
+      <p>FETCH HELLO</p>
+    </li>
+
+  </ul>
 
 </div>
