@@ -187,6 +187,7 @@ body{
     z-index: 8888;
 }
 
+
 .closeicon{
     position: absolute;
     top: 5px;
@@ -196,7 +197,8 @@ body{
     transition: 0.3s;
 }
 
+
 .closeicon:hover{
-    font-size: 1.8rem;
+    font-size: 2rem;
     top:3.5px;
 }
