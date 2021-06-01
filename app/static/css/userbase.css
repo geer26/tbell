@@ -40,10 +40,25 @@ body{
     top: 0;
     left: 0;
     background-color: #cce8ca;
-    width: 95vw;
+    width: 100vw;
     height: 100vh;
-    padding-left: 5vw;
+
+    display: grid;
+    grid-template-columns: 1fr 19fr;
+    grid-template-areas:
+        "blank c";
+
     overflow: hidden;
+}
+
+
+.cont{
+    grid-area: c;
+    display: none;
+    position: relative;
+    width: 99%;
+    height: 99%;
+    border: 1px solid red;
 }
 
 

@@ -32,7 +32,14 @@
         {% include '/userres/user_sidebar.html' %}
 
         <div class="maincontent" id="maincontent">
-            HELLO WORLD!
+            <div class="blank_area"></div>
+            <div class="content_area">
+                {% include '/userres/setting_pane.html' %}
+                {% include '/userres/exercise_pane.html' %}
+                {% include '/userres/workout_pane.html' %}
+                {% include '/userres/competitor_pane.html' %}
+                {% include '/userres/contest_pane.html' %}
+            </div>
         </div>
 
     </body>

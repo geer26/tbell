@@ -7,26 +7,26 @@
   <ul class="menulist">
 
     <li>
-      <p onclick="hide_sidebar()">BEÁLLÍTÁSOK</p>
+      <p onclick="switch_pane('settings_pane')">BEÁLLÍTÁSOK</p>
     </li>
     <li>
-      <p>GYAKORLATOK</p>
+      <p onclick="switch_pane('exercises_pane')">GYAKORLATOK</p>
     </li>
     <li>
-      <p>SOROZATOK</p>
+      <p onclick="switch_pane('workouts_pane')">SOROZATOK</p>
     </li>
     <li>
-      <p>VERSENYZŐK</p>
+      <p onclick="switch_pane('competitors_pane')">VERSENYZŐK</p>
     </li>
     <li>
-      <p>VERSENYEK</p>
+      <p onclick="switch_pane('contests_pane')">VERSENYEK</p>
     </li>
-    <li onclick="location.href='/logout'">
-      <p>KILÉPÉS</p>
+    <li>
+      <p onclick="location.href='/logout'">KILÉPÉS</p>
     </li>
 
-    <li onclick="fetch_hello()">
-      <p>FETCH HELLO</p>
+    <li>
+      <p onclick="fetch_hello()">FETCH HELLO</p>
     </li>
 
   </ul>
