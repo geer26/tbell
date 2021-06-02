@@ -27,6 +27,19 @@ function hide_sidebar(){
 }
 
 
+function hide_modalbar(){
+    var x = window.matchMedia("(max-width: 600px)").matches;
+    if (x){
+        $('.f-modalback').css('right', '100%');
+        setTimeout(() => { $('.user-sidebar').css('left',''); }, 600);
+    } else{
+        $('.f-modalback').css('right', '100%');
+        setTimeout(() => { $('.user-sidebar').css('left',''); }, 400);
+    }
+    return;
+}
+
+
 function switch_pane(pane){
     $("div.cont").hide();
     $('#'+pane).show();
