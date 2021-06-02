@@ -27,16 +27,29 @@ function hide_sidebar(){
 }
 
 
+//right side of the screen
 function hide_modalbar(){
     var x = window.matchMedia("(max-width: 600px)").matches;
     if (x){
-        $('.f-modalback').css('right', '100%');
-        setTimeout(() => { $('.user-sidebar').css('left',''); }, 600);
+        $('.f-modalback').css('right', '-100%');
+        setTimeout(() => {
+            $('.user-sidebar').css('right','');
+            $('#back').hide();
+        }, 600);
     } else{
-        $('.f-modalback').css('right', '100%');
-        setTimeout(() => { $('.user-sidebar').css('left',''); }, 400);
+        $('.f-modalback').css('right', '-100%');
+        setTimeout(() => {
+            $('.user-sidebar').css('right','');
+            $('#back').hide();
+        }, 400);
     }
     return;
+}
+
+
+function show_modalbar(){
+    $('.f-modalback').css('right', '0');
+    $('#back').show();
 }
 
 
