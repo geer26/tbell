@@ -1,5 +1,6 @@
 preload_end();
-switch_pane('workouts_pane')
+switch_pane('workouts_pane');
+hide_modalbar();
 
 
 function fetch_hello(){
