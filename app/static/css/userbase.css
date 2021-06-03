@@ -54,11 +54,54 @@ body{
 
 .cont{
     grid-area: c;
-    display: grid;
     position: relative;
+    overflow: auto;
+
+    display: grid;
+    grid-template-rows: 1fr 15fr;
+    grid-template-areas:
+        "titlebar"
+        "cards";
+
     width: 99%;
     height: 99%;
+}
+
+
+.cont-title{
+    grid-area: titlebar;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+}
+
+
+.cont-cardholder{
+    grid-area: cards;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
     border: 1px solid red;
+    padding: 5px;
+
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, 150px);
+}
+
+
+.card{
+    position: relative;
+    height: 150px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgba(232, 174, 39, 0.5);
 }
 
 

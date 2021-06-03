@@ -20,6 +20,15 @@
     z-index: 9999;
 }
 
+
+@media only screen and (max-width: 600px) {
+    .preloader{
+        width: 60vw;
+        height: 60vw;
+    }
+}
+
+
 .upper-left{
     position: absolute;
     bottom: 55%;
