@@ -54,7 +54,7 @@ body{
 
 .cont{
     grid-area: c;
-    display: none;
+    display: grid;
     position: relative;
     width: 99%;
     height: 99%;
