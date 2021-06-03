@@ -74,9 +74,14 @@ body{
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid blue;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+}
+
+
+.cont-holder-holder{
+    position: relative;
+    padding: 5px;
 }
 
 
@@ -86,7 +91,6 @@ body{
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
     padding: 5px;
 
     display: grid;
@@ -97,11 +101,36 @@ body{
 
 
 .card{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 150px;
     width: 100px;
     border-radius: 5px;
     background-color: rgba(232, 174, 39, 0.5);
+    transition: 0.4s;
+}
+
+.card:hover{
+    height: 155px;
+    width: 103px;
+    top: -5px;
+    left: -1.5px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.88);
+}
+
+.first_card{
+    background-image: url('/static/img/icons/newcard.png');
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-color: rgba(0,0,0,0);
+	cursor: pointer;
+
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100px;
 }
 
 
