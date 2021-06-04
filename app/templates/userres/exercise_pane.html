@@ -6,9 +6,21 @@
   <div id="cardholder" class="cont-cardholder">
 
     <div class="cont-holder-holder">
-      <div class="first_card" onclick="show_modalbar()">
+      <div class="first_card" onclick="show_modalbar('add_exercise')">
       </div>
     </div>
+
+    {% if userdata['exercises']|length < 1 %}
+      No exercises
+    {% else %}
+      {% for exercise in userdata['exercises'] %}
+        <div class="cont-holder-holder">
+          <div class="card">
+            {{exercise.name}}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
 
     <div class="cont-holder-holder">
       <div class="card">

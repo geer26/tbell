@@ -29,8 +29,9 @@ function hide_sidebar(){
 
 
 //right side of the screen
-function hide_modalbar(){
+function hide_modalbar(activeform){
     var x = window.matchMedia("(max-width: 600px)").matches;
+    $('#'+activeform).show();
     if (x){
         $('.f-modalback').css('right', '-100%');
         setTimeout(() => {

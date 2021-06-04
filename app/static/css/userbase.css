@@ -82,6 +82,8 @@ body{
 .cont-holder-holder{
     position: relative;
     padding: 5px;
+    border: 1px solid green;
+    max-width: fit-content;
 }
 
 
@@ -89,14 +91,16 @@ body{
     grid-area: cards;
     overflow: auto;
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 99%;
     padding: 5px;
 
-    display: grid;
+    display: inline-grid;
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-template-rows: repeat(auto-fit, 150px);
+
+    border: 1px solid red;
 }
 
 
@@ -111,6 +115,7 @@ body{
     transition: 0.4s;
 }
 
+
 .card:hover{
     height: 155px;
     width: 103px;
@@ -118,6 +123,7 @@ body{
     left: -1.5px;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.88);
 }
+
 
 .first_card{
     background-image: url('/static/img/icons/newcard.png');
@@ -131,6 +137,12 @@ body{
     left: 0;
     height: 150px;
     width: 100px;
+    transition: 0.4s;
+}
+
+
+.first_card:hover{
+    filter: brightness(0.75);
 }
 
 
